@@ -7,5 +7,11 @@
     "bot" : {
         "PREFIX" : "-",
         "TOKEN" : "ODc2NTk4NDI5MTgxMTY1NjIw.YRmZ5w.tmuPTaL1uD9iwB5HC-AYt3R34gM"
+    },
+    "discord" : {
+        "ADMINROLE" : "868726965539049472",
+        "GUILDID" : "868725826449965056",
+        "MUTEROLE" : "879166268542943242",
+        "MEMBERROLE" : "868727155851395133"
     }
 }

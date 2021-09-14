@@ -15,7 +15,7 @@ module.exports = {
                 reason = "none";
             }
             try {
-                message.mentions.members.first().roles.remove(config.discord.MEMBERROLE);
+                //message.mentions.members.first().roles.remove(config.discord.MEMBERROLE);
                 message.mentions.members.first().roles.add(config.discord.MUTEROLE);
                 message.channel.send(`<@${message.author.id}> muted ${message.mentions.members.first()} for ${reason} successfully.`);
                 try {

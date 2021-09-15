@@ -4,10 +4,7 @@ const fs = require('fs');
 const info = require('./info.json');
 
 const prefix = "-";
-const mute_role = "879166268542943242";
-const admin_role = "868726965539049472";
-
-const activities = ['shroomers','server performance',`${client.guilds} members.`,'minecraft builds','ASMR discord sounds'];
+const activities = ['shroomers', 'server performance', ` members` , 'minecraft builds', 'ASMR discord videos', 'out for youtube cease and desist notices'];
 
 var initTime = new Date().getMinutes();
 
@@ -20,9 +17,12 @@ for(const file of commandDir) {
 
 client.on('ready', () => {
     console.log("Logged in.");
-    setInterval(() => {
-        client.user.setActivity(activities[Math.floor(Math.random) * (activities.length - 1) + 1]);
-    }, 10000);
+    setInterval(async () => {
+        let randactiv = activities[Math.floor(Math.random() * (activities.length - 1) + 1)];
+        let mc = await client.guilds.cache.get(info.discord.GUILDID).memberCount.toString();
+        activities[2] = mc + " members";
+        client.user.setActivity(randactiv, {type : "WATCHING"});
+    }, 5000);
 });
 
 client.on('message', async msg => {

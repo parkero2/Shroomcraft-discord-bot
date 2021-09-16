@@ -1,7 +1,7 @@
 {
   "373559111922483200": {
     "assets": {
-      "cookies": 100
+      "cookies": 99
     },
     "statistics": {
       "messages": 0,
@@ -18,6 +18,15 @@
     }
   },
   "142002161545510913": {
+    "assets": {
+      "cookies": 101
+    },
+    "statistics": {
+      "messages": 0,
+      "vctime": 0
+    }
+  },
+  "767222186254532618": {
     "assets": {
       "cookies": 100
     },

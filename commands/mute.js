@@ -1,4 +1,4 @@
-const config = require('../info.json');
+const config = require('../src/info.json');
 
 module.exports = {
     'name' : 'mute', 

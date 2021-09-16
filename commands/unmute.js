@@ -1,4 +1,4 @@
-const config = require('../info.json');
+const config = require('../src/info.json');
 
 module.exports = {
     'name' : 'unmute', 
@@ -7,7 +7,6 @@ module.exports = {
     execute(message) {
         if(message.member.roles.cache.find(role => role.id == config.discord.ADMINROLE)) {
             try {
-                //message.mentions.members.first().roles.add(config.discord.MEMBERROLE);
                 message.mentions.members.first().roles.remove(config.discord.MUTEROLE);
                 message.channel.send(`<@${message.author.id}> unmuted ${message.mentions.members.first()}.`);
                 try {

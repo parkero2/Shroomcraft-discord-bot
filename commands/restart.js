@@ -1,4 +1,4 @@
-const info = require('../info.json');
+const info = require('../src/info.json');
 const petrosource = require('../petro.js');
 var p = null;
 module.exports = {

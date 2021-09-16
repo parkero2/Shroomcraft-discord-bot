@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client;
 const fs = require('fs');
-const info = require('./info.json');
+const info = require('./src/info.json');
 
 const prefix = "-";
 const activities = ['shroomers', 'server performance', ` members` , 'minecraft builds', 'ASMR discord videos', 'out for youtube cease and desist notices'];
@@ -13,6 +13,7 @@ const commandDir = fs.readdirSync('./commands/').filter(file => file.endsWith('.
 for(const file of commandDir) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
+    console.log(`Loaded file ${file}`);
 }
 
 client.on('ready', () => {

@@ -1,7 +1,7 @@
 {
   "373559111922483200": {
     "assets": {
-      "cookies": 99
+      "cookies": 290
     },
     "statistics": {
       "messages": 0,
@@ -10,7 +10,7 @@
   },
   "640824561235132427": {
     "assets": {
-      "cookies": 100
+      "cookies": 110
     },
     "statistics": {
       "messages": 0,
@@ -19,7 +19,7 @@
   },
   "142002161545510913": {
     "assets": {
-      "cookies": 101
+      "cookies": 90
     },
     "statistics": {
       "messages": 0,
@@ -29,6 +29,15 @@
   "767222186254532618": {
     "assets": {
       "cookies": 100
+    },
+    "statistics": {
+      "messages": 0,
+      "vctime": 0
+    }
+  },
+  "601710571045388320": {
+    "assets": {
+      "cookies": 99
     },
     "statistics": {
       "messages": 0,

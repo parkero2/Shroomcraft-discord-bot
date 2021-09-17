@@ -4,10 +4,15 @@ const playerdata = require('../src/playerdata.json');
 module.exports = {
     'name' : 'inventory',
     'aliases' : ['i', 'bag', 'backpack'],
-    'description' : 'Help command',
+    'description' : 'Check player inventory',
     execute(message) {
         if (playerdata[message.author.id]) {
-            message.channel.send(`You have ${playerdata[message.author.id].assets.cookies} cookies!`);
+            if (message.mentions.members.first()) {
+                message.channel.send(`${message.mentions.members.first()} has ${playerdata[message.mentions.members.first().id].assets.cookies} cookies!`);
+            }
+            else {
+                message.channel.send(`You have ${playerdata[message.author.id].assets.cookies} cookies!`);
+            }
         }
         else {
             //Create a data file
@@ -16,7 +21,6 @@ module.exports = {
         }
     },
     async createbag(message) {
-        //let dataToBeWritten = JSON.parse(`{"${message.author.id}":{"assets":{"cookies" : 100},"statistics":{"messages":0,"vctime" : 0}}}`);
         playerdata[message.author.id] = {"assets":{"cookies" : 100},"statistics":{"messages":0,"vctime" : 0}};
         await fs.writeFile('./src/playerdata.json', JSON.stringify(playerdata, null, 2), function (err) {
             if (err) {

@@ -11,12 +11,13 @@ module.exports = {
         if (message.mentions.members.first() && payload[1].includes(message.mentions.members.first().id)) {
             if (playerdata[message.author.id]) {
                 try {
-                    if (playerdata[message.author.id].assets[payload[2].toLowerCase()] >= parseInt(payload[3])) {
-                        playerdata[message.author.id].assets[payload[2].toLowerCase()] -= parseInt(payload[3]);
-                        playerdata[message.mentions.members.first().id].assets[payload[2].toLowerCase()] += parseInt(payload[3]);
+                    if (playerdata[message.author.id].assets[payload[2].toLowerCase()] >= Math.abs(parseInt(payload[3]))) {
+                        playerdata[message.author.id].assets[payload[2].toLowerCase()] -= Math.abs(parseInt(payload[3]));
+                        playerdata[message.mentions.members.first().id].assets[payload[2].toLowerCase()] += Math.abs(parseInt(payload[3]));
                     }
                     else {
                         message.channel.send("You either have insufficient funds or the requested item does not exist.");
+                        return false;
                     }
                     fs.writeFile('./src/playerdata.json', JSON.stringify(playerdata, null, 2), function (err) {
                         if (err) {

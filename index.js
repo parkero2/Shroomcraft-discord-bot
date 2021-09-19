@@ -3,7 +3,6 @@ const client = new Discord.Client;
 const fs = require('fs');
 const info = require('./src/info.json');
 
-const prefix = "-";
 const activities = ['shroomers', 'server performance', ` members` , 'minecraft builds', 'ASMR discord videos', 'out for youtube cease and desist notices'];
 
 var initTime = new Date().getMinutes();
@@ -27,9 +26,9 @@ client.on('ready', () => {
 });
 
 client.on('message', async msg => {
-    if (msg.content.startsWith(prefix)) {
+    if (msg.content.startsWith(info.discord.PREFIX)) {
         let messagePayload = msg.content.toUpperCase().split(" ");
-        messagePayload[0] = messagePayload[0].substr(prefix.length, messagePayload[0].length-1);
+        messagePayload[0] = messagePayload[0].substr(info.discord.PREFIX.length, messagePayload[0].length-1);
         let cmd = client.commands.get(messagePayload[0].toLowerCase()) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(messagePayload[0].toLowerCase()));
         if (cmd) {
             cmd.execute(msg);
@@ -39,5 +38,9 @@ client.on('message', async msg => {
         }
     }
 });
+
+module.exports = {
+    discordClient : client
+}
 
 client.login(info.bot.TOKEN);

@@ -15,8 +15,11 @@ module.exports = {
 
             }
         }
-        for (let i = 0; i < Object.keys(playerdata).length; i++) {
+        for (let i of playerdata) {
             data.msgs[playerdata[Object.keys(playerdata)[i]]] = playerdata[Object.keys(playerdata)[i]].statistics.messages;
+        }
+        for (let i of playerdata) {
+            data.vc[playerdata[Object.keys(playerdata)[i]]] = playerdata[Object.keys(playerdata)[i]].statistics.vctime;
         }
     }
 }

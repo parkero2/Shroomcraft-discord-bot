@@ -1,3 +1,4 @@
+#Adding slash commands is easier with python libaries
 import requests
 
 

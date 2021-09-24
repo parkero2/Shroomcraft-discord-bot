@@ -3,6 +3,8 @@ const fs = require('fs');
 const playerdata = require('../src/playerdata.json');
 const assetsFile = require('../src/assets.json');
 
+//Remove items from circulation
+
 module.exports = {
     'name' : 'remove',
     'aliases' : [],

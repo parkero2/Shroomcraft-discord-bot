@@ -11,8 +11,8 @@ module.exports = {
         if (message.mentions.members.first() && payload[1].includes(message.mentions.members.first().id)) {
             if (playerdata[message.author.id]) {
                 try {
-                    if (playerdata[message.author.id].assets[payload[2].toLowerCase()] >= Math.abs(parseInt(payload[3]))) {
-                        playerdata[message.author.id].assets[payload[2].toLowerCase()] -= Math.abs(parseInt(payload[3]));
+                    if (playerdata[message.author.id].assets[payload[2].toLowerCase()] >= Math.abs(parseInt(payload[3]))) { //Check the player has enough funds to complete the transaction
+                        playerdata[message.author.id].assets[payload[2].toLowerCase()] -= Math.abs(parseInt(payload[3])); //Get the absoloute value of the amount the player is wanting to reade
                         playerdata[message.mentions.members.first().id].assets[payload[2].toLowerCase()] += Math.abs(parseInt(payload[3]));
                     }
                     else {
@@ -37,6 +37,7 @@ module.exports = {
                 }
             }
             else {
+                //Player does not have a bag, create one
                 bag.execute(message);
                 this.execute(message);
             }

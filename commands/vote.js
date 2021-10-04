@@ -7,16 +7,17 @@ module.exports = {
     'name' : 'vote',
     'aliases' : ['v', 'votify'],
     'description' : 'create a vote',
-    execute(message) {
+    async execute(message) {
         try {
             let payload = message.content.split(" ");
+            let o = await message.channel.messages.fetch(payload[1]);
             if (parseInt(payload[2]) < 10 && parseInt(payload[2]) > 1) {
                 for (let i = 0; i < parseInt(payload[2]); i++) {
-                    message.react(reactions[i]);
+                    o.react(reactions[i]);
                 }
             }
         }
-        catch {
+        catch (err) {
             message.channel.send(`An error occoured, please make sure you have foramtted the command correctly (${"`"}${info.bot.PREFIX}${this.name} <messageID> <number of options${"`"}).`)
         }
     }

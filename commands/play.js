@@ -1,4 +1,4 @@
-//const { Player } = require('discord-player');
+/**const { Player } = require('discord-player');
 const Discord = require('discord.js');
 const iFile = require('../index.js');
 const info = require('../src/info.json');
@@ -28,4 +28,4 @@ module.exports = {
             }
         }
     }
-}
+}*/

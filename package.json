@@ -1,0 +1,28 @@
+{
+  "name": "shroomcraft_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "discord-player": "^5.1.0",
+    "discord.js": "^12.5.3",
+    "ffmpeg-static": "^4.4.0",
+    "node.js": "^0.0.1-security",
+    "nodeactyl": "^3.1.0",
+    "pterodactyl.js": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parkero2/Shroomcraft-discord-bot.git"
+  },
+  "author": "Oliver Parker, Parkderdev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parkero2/Shroomcraft-discord-bot/issues"
+  },
+  "homepage": "https://github.com/parkero2/Shroomcraft-discord-bot#readme"
+}

@@ -1,8 +1,13 @@
 const fs = require('fs');
 const playerdata = require('../src/playerdata.json');
 const bag = require('./inventory.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
+    data: new SlashCommandBuilder()
+        .setName(this.name)
+        .setDescription(this.description)
+        .add,
     'name' : 'give',
     'aliases' : ['g', 'gift'],
     'description' : 'Help command',

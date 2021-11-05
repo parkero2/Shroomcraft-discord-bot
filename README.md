@@ -15,6 +15,7 @@ Assign the nessicairy role IDs to the correspnding keys under `discord` in [the 
  To do this you need to enable [discord developer mode](https://discordia.me/developer-mode#:~:text=Enabling%20Developer%20Mode&text=Open%20your%20Discord%20settings%20(the,the%20toggle%20to%20enable%20it ) 
 
 ## Install dependancies
-execute `npm i` in the root directory of the repository to install the required dependancies in the package.json file.
+Execute `npm i` in the root directory of the repository to install the required dependancies in the package.json file.
 
+## Runnign the bot
 Execute `npm run start` to begin the bot.

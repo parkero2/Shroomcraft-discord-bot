@@ -17,5 +17,5 @@ Assign the nessicairy role IDs to the correspnding keys under `discord` in [the 
 ## Install dependancies
 Execute `npm i` in the root directory of the repository to install the required dependancies in the package.json file.
 
-## Runnign the bot
+## Running the bot
 Execute `npm run start` to begin the bot.

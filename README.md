@@ -1,8 +1,9 @@
 # Shroomcraft-discord-bot
 
 ## Prerequesites
-This requires the node.js runtime enviroment and npm package manager
-https://www.npmjs.com/
+This requires the node.js runtime enviroment, a Discord account and npm package manager
+https://www.npmjs.com/  (version 14.17.5)
+https://discord.com
 https://nodejs.org/
 
 The acting host for the bot requires an active internet connection with the ability to access the [Discord API gateway](https://discord.com/developers/docs/topics/gateway)
@@ -19,3 +20,10 @@ Execute `npm i` in the root directory of the repository to install the required 
 
 ## Running the bot
 Execute `npm run start` to begin the bot.
+
+## Invite the bot to your guild
+Go to https://discord.com/developers/applications and select your application from the menu.
+
+Select the bot section and select the `bot` scope and `admin` permission.
+
+Copy and paste the URL to add the bot to your guild/server.

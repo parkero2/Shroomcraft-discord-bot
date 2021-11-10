@@ -6,9 +6,9 @@ module.exports = {
     'aliases' : [],
     'description' : 'Stops the server.',
     execute(message) {
-        if (message.member.roles.cache.find(role => role.id == info.discord.ADMINROLE)) {
+        if (message.member.roles.cache.find(role => role.id == info.discord.ADMINROLE)) {//Verify permissions
             message.channel.send(`Waiting for a response from the panel. (${this.name})`).then(async mdat => {
-                if (petrosource.stop()) {
+                if (petrosource.stop()) { //Send stop command
                     mdat.edit(`Send ${this.name} command successfully.`);
                 }
                 else {

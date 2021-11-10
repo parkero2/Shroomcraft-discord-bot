@@ -1,18 +1,18 @@
 const fs = require('fs');
 const playerdata = require('../src/playerdata.json');
 const bag = require('./inventory.js');
-const { SlashCommandBuilder } = require('@discordjs/builders');
+const { SlashCommandBuilder } = require('@discordjs/builders'); //The start of adding clash command handlers to the file
 
 module.exports = {
-    data: new SlashCommandBuilder()
+    data: new SlashCommandBuilder() //More slash command stuff
         .setName(this.name)
         .setDescription(this.description)
         .add,
     'name' : 'give',
     'aliases' : ['g', 'gift'],
     'description' : 'Help command',
-    execute(message) {
-        let payload = message.content.split(" ");
+    execute(message) { //Execute function; the main function of the module with al the required info
+        let payload = message.content.split(" "); //Pasrse the message into an array
         if (message.mentions.members.first() && payload[1].includes(message.mentions.members.first().id)) {
             if (playerdata[message.author.id]) {
                 try {
@@ -24,7 +24,7 @@ module.exports = {
                         message.channel.send("You either have insufficient funds or the requested item does not exist.");
                         return false;
                     }
-                    fs.writeFile('./src/playerdata.json', JSON.stringify(playerdata, null, 2), function (err) {
+                    fs.writeFile('./src/playerdata.json', JSON.stringify(playerdata, null, 2), function (err) { //Save the data to the local file
                         if (err) {
                             message.channel.send(`❌ Could not complete transaction.`);
                             console.log(err)

@@ -3,7 +3,7 @@ const info = require('./src/info.json');
 
 const nclient = new nodedactyl.NodeactylClient(info.petro.PANEL, info.petro.KEY);
 
-module.exports = {
+module.exports = { //The commands to control the 'power' status
     async start() {
         try {
             await nclient.startServer(info.petro.ID);

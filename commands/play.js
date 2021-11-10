@@ -1,3 +1,5 @@
+//NOT FINISHED
+
 /**const { Player } = require('discord-player');
 const Discord = require('discord.js');
 const iFile = require('../index.js');

@@ -9,14 +9,14 @@ module.exports = {
     'name' : 'add',
     'aliases' : [],
     'description' : 'Add items into circulation',
-    execute(message) {
-        if (message.member.roles.cache.find(role => role.id == info.discord.ADMINROLE)) {
+    execute(message) { //The function called when executing th emain contents of the module
+        if (message.member.roles.cache.find(role => role.id == info.discord.ADMINROLE)) { //Make sure the user has appropiate permissions within the Discord guild to execute the command
             let payload = message.content.split(" ");
             if (payload[1].includes(message.mentions.members.first().id)) {
                 try {
                    if (assetsFile.assets.includes(payload[2].toLowerCase())) {
                         playerdata[message.mentions.members.first().id].assets[payload[2].toLowerCase()] += Math.abs(parseInt(payload[3]));
-                        fs.writeFile('./src/playerdata.json', JSON.stringify(playerdata, null, 2), function (err) {
+                        fs.writeFile('./src/playerdata.json', JSON.stringify(playerdata, null, 2), function (err) { //Save the file to the local disk
                             if (err) {
                                 message.channel.send(`❌ Could not complete inventory modifcation.`);
                                 console.log(err)
@@ -28,8 +28,9 @@ module.exports = {
                             }
                         });
                    }
+                   //Here on down is error messages in the event one should occour
                    else {
-                       message.channel.send("❌ Could not find asset in the assets file.");
+                       message.channel.send("❌ Could not find asset in the assets file."); 
                        return false;
                    }
                 }

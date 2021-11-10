@@ -6,9 +6,9 @@ module.exports = {
     'aliases' : [],
     'description' : 'Starts the server.',
     execute(message) {
-        if (message.member.roles.cache.find(role => role.id == info.discord.ADMINROLE)) {
+        if (message.member.roles.cache.find(role => role.id == info.discord.ADMINROLE)) {//Verify permissions
             message.channel.send(`Waiting for a response from the panel. (${this.name})`).then(async mdat => {
-                if (petrosource.start()) {
+                if (petrosource.start()) { //Send start command
                     mdat.edit(`Sent ${this.name} command successfully.`);
                 }
                 else {

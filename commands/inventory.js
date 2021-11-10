@@ -20,9 +20,9 @@ module.exports = {
             this.execute(message);
         }
     },
-    async createbag(message) {
+    async createbag(message) { //A function avaliable for other files to create a bag for a user
         playerdata[message.author.id] = {"assets":{"cookies" : 100},"statistics":{"messages":0,"vctime" : 0}};
-        await fs.writeFile('./src/playerdata.json', JSON.stringify(playerdata, null, 2), function (err) {
+        await fs.writeFile('./src/playerdata.json', JSON.stringify(playerdata, null, 2), function (err) { //Save the player bag data
             if (err) {
                 message.channel.send(`❌ Could not create a data file for <@${message.author.id}>`);
                 console.log(err)

@@ -1,7 +1,7 @@
 const info = require('../src/info.json');
 const indexFile = require('../index.js');
 
-const reactions = ["1️⃣", "2️⃣", "3️⃣",  "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"];
+const reactions = ["1️⃣", "2️⃣", "3️⃣",  "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"]; //Define a list of reactions for the bot to use in the event a vote is requested
 
 module.exports = {
     'name' : 'vote',

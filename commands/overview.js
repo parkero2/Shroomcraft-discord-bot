@@ -9,9 +9,9 @@ module.exports = {
     execute(message) {
         message.channel.send("Awaiting response from API.").then(async msgdata => {
             try {
-                let x = await nclient.getServerUsages(info.petro.ID);
+                let x = await nclient.getServerUsages(info.petro.ID); //Get server info
                 console.log(await nclient.getServerStatus(info.petro.ID));
-                msgdata.edit("POWER: " + x.current_state + "\nCPU: " + x.resources.cpu_absolute.toFixed(0).toString() + "%\nMEMORY: " + (x.resources.memory_bytes / 1024 / 1024 / 1024).toFixed(2).toString() + "GB\nDISK: " + (x.resources.disk_bytes / 1024 / 1024 / 1024).toFixed(2).toString() + "GB");
+                msgdata.edit("POWER: " + x.current_state + "\nCPU: " + x.resources.cpu_absolute.toFixed(0).toString() + "%\nMEMORY: " + (x.resources.memory_bytes / 1024 / 1024 / 1024).toFixed(2).toString() + "GB\nDISK: " + (x.resources.disk_bytes / 1024 / 1024 / 1024).toFixed(2).toString() + "GB"); //Convert to a readqable string
             } catch (err) {
                 msgdata.edit("An error occured.");
             }

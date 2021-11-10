@@ -5,12 +5,12 @@ module.exports = {
     'aliases' : ['u'],
     'description' : "Unmute someone",
     execute(message) {
-        if(message.member.roles.cache.find(role => role.id == config.discord.ADMINROLE)) {
+        if(message.member.roles.cache.find(role => role.id == config.discord.ADMINROLE)) {//Verify permissions
             try {
                 message.mentions.members.first().roles.remove(config.discord.MUTEROLE);
                 message.channel.send(`<@${message.author.id}> unmuted ${message.mentions.members.first()}.`);
                 try {
-                    message.mentions.members.first().send(`You were unmuted by <@${message.author.id}>.`);
+                    message.mentions.members.first().send(`You were unmuted by <@${message.author.id}>.`); //Tell a user they were muted
                 }
                 catch {
                     message.channel.send("Could not DM member.");
